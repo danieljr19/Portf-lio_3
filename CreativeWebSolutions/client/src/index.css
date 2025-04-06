@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 88%;
+    
+    --card: 223 25% 14%;
+    --card-foreground: 0 0% 88%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 88%;
+    
+    --primary: 218 92% 57%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 262 86% 66%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 223 25% 16%;
+    --muted-foreground: 220 8% 70%;
+    
+    --accent: 196 71% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 223 15% 24%;
+    --input: 223 25% 14%;
+    --ring: 218 92% 57%;
+    
+    --radius: 0.5rem;
+    
+    --chart-1: 218 92% 57%;
+    --chart-2: 262 86% 66%;
+    --chart-3: 318 93% 64%;
+    --chart-4: 196 71% 60%;
+    --chart-5: 240 57% 70%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-inter antialiased bg-background text-foreground scroll-smooth;
+  }
+
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary to-[#D64FF4];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[#D64FF4];
+  }
+  
+  .text-gradient-icon {
+    @apply text-primary;
+    filter: drop-shadow(0 0 2px rgba(139, 92, 246, 0.5));
+  }
+  
+  .partner-icon-glow {
+    filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.7));
+    animation: pulse-glow 3s infinite ease-in-out;
+  }
+  
+  @keyframes pulse-glow {
+    0% { filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.7)); }
+    50% { filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.9)); }
+    100% { filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.7)); }
+  }
+
+  .code-bg {
+    position: relative;
+  }
+
+  .code-bg::before {
+    content: '</>';
+    position: absolute;
+    opacity: 0.03;
+    font-size: 15rem;
+    bottom: -4rem;
+    left: -3rem;
+    z-index: -1;
+    transform: rotate(-10deg);
+    font-family: monospace;
+  }
+
+  .crown-bg {
+    position: relative;
+  }
+
+  .crown-bg::before {
+    content: '👑';
+    position: absolute;
+    opacity: 0.03;
+    font-size: 20rem;
+    top: -5rem;
+    right: -5rem;
+    z-index: -1;
+    transform: rotate(15deg);
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    @apply bg-gradient-to-r from-primary to-[#D64FF4];
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
